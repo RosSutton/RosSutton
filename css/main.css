@@ -524,7 +524,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 }
 @media (max-width: 700px) {
   .testimonial-card { flex: 0 0 100%; }
-  .carousel-btn { display: none; }
   .carousel-dots { display: flex; }
 }
 

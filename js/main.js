@@ -146,8 +146,8 @@ function initCarousel() {
     update();
   }
 
-  nextBtn.addEventListener('click', () => { resetAutoPlay(); next(); });
-  prevBtn.addEventListener('click', () => { resetAutoPlay(); prev(); });
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
 
   // Swipe support
   let startX = 0;
@@ -155,18 +155,8 @@ function initCarousel() {
   track.addEventListener('pointerup', (e) => {
     track.classList.remove('grabbing');
     const diff = startX - e.clientX;
-    if (Math.abs(diff) > 50) { resetAutoPlay(); diff > 0 ? next() : prev(); }
+    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
   });
-
-  // Auto-play: advance every 4 seconds, pause on hover
-  let autoPlay = setInterval(next, 4000);
-  function resetAutoPlay() {
-    clearInterval(autoPlay);
-    autoPlay = setInterval(next, 4000);
-  }
-  const wrap = document.querySelector('.testimonials-carousel-wrap');
-  wrap.addEventListener('mouseenter', () => clearInterval(autoPlay));
-  wrap.addEventListener('mouseleave', () => { autoPlay = setInterval(next, 4000); });
 
   window.addEventListener('resize', () => update(false));
 
