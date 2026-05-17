@@ -5,6 +5,7 @@ const sections = [
   'sections/services.html',
   'sections/testimonials.html',
   'sections/bio.html',
+  'sections/contact.html',
   'sections/blogs.html',
 ];
 
