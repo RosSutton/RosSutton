@@ -27,6 +27,7 @@ async function loadSections() {
 
   initAnimations();
   initNavHighlight();
+  initCardFlip();
 }
 
 // IntersectionObserver: add .visible when element enters viewport
@@ -73,6 +74,17 @@ function initNavHighlight() {
   );
 
   sectionEls.forEach((el) => highlightObserver.observe(el));
+}
+
+// Tap to flip on touch devices
+function initCardFlip() {
+  document.querySelectorAll('.service-card-wrap').forEach((card) => {
+    card.addEventListener('click', () => {
+      if (window.matchMedia('(hover: none)').matches) {
+        card.classList.toggle('flipped');
+      }
+    });
+  });
 }
 
 // Footer year
