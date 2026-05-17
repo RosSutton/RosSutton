@@ -94,6 +94,22 @@ function initCarousel() {
   let current = 0;
   let isTransitioning = false;
 
+  // Build dots (mobile only)
+  const dotsContainer = document.querySelector('.carousel-dots');
+  const dots = originalCards.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+    dot.addEventListener('click', () => { resetAutoPlay(); current = i; update(); });
+    dotsContainer.appendChild(dot);
+    return dot;
+  });
+
+  function updateDots() {
+    const idx = ((current % total) + total) % total;
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
+  }
+
   function cardWidth() {
     return allCards[0].offsetWidth + 28;
   }
@@ -101,6 +117,7 @@ function initCarousel() {
   function update(animate = true) {
     track.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1)' : 'none';
     track.style.transform = `translateX(-${current * cardWidth()}px)`;
+    updateDots();
   }
 
   // After animating to a clone, silently jump back to the real card
@@ -168,6 +185,7 @@ function initCardFlip() {
 }
 
 // Footer year
-document.getElementById('footer-year').textContent = new Date().getFullYear();
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
 
 loadSections();
