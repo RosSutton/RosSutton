@@ -77,77 +77,46 @@ function initNavHighlight() {
   sectionEls.forEach((el) => highlightObserver.observe(el));
 }
 
-// Testimonials carousel (infinite loop)
+// Testimonials carousel
 function initCarousel() {
   const track = document.querySelector('.testimonials-track');
-  const prevBtn = document.querySelector('.carousel-btn-prev');
-  const nextBtn = document.querySelector('.carousel-btn-next');
   if (!track) return;
 
-  // Clone all cards and append for seamless looping
-  const originalCards = Array.from(track.querySelectorAll('.testimonial-card'));
-  originalCards.forEach(card => track.appendChild(card.cloneNode(true)));
+  const original = Array.from(track.querySelectorAll('.testimonial-card'));
+  const total = original.length;
+  const visibleCount = () => window.innerWidth <= 700 ? 1 : 3;
+
+  // Prepend and append clones for seamless looping
+  original.forEach(c => track.appendChild(c.cloneNode(true)));
+  original.slice().reverse().forEach(c => track.prepend(c.cloneNode(true)));
 
   const allCards = track.querySelectorAll('.testimonial-card');
-  const total = originalCards.length;
-  const visibleCount = () => window.innerWidth <= 700 ? 1 : 3;
-  let current = 0;
-  let isTransitioning = false;
-
-  // Build dots (mobile only)
-  const dotsContainer = document.querySelector('.carousel-dots');
-  const dots = originalCards.map((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
-    dot.addEventListener('click', () => { resetAutoPlay(); current = i; update(); });
-    dotsContainer.appendChild(dot);
-    return dot;
-  });
-
-  function updateDots() {
-    const idx = ((current % total) + total) % total;
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
-  }
+  let current = total; // start at first real card (after prepended clones)
 
   function cardWidth() {
     return allCards[0].offsetWidth + 28;
   }
 
-  function update(animate = true) {
+  function jumpTo(idx, animate) {
     track.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1)' : 'none';
-    track.style.transform = `translateX(-${current * cardWidth()}px)`;
-    updateDots();
+    track.style.transform = `translateX(-${idx * cardWidth()}px)`;
+    current = idx;
   }
 
-  // After animating to a clone, silently jump back to the real card
+  // After each animated move, silently snap if we're on a clone
   track.addEventListener('transitionend', () => {
-    if (current >= total) {
-      current = current - total;
-      update(false);
-    } else if (current < 0) {
-      current = current + total;
-      update(false);
-    }
-    isTransitioning = false;
+    if (current >= total * 2) jumpTo(total, false);
+    if (current < total) jumpTo(total * 2 - visibleCount(), false);
   });
 
-  function next() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    current++;
-    update();
-  }
+  function next() { jumpTo(current + 1, true); }
+  function prev() { jumpTo(current - 1, true); }
 
-  function prev() {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    current--;
-    update();
-  }
+  // Initialise position without animation
+  jumpTo(current, false);
 
-  nextBtn.addEventListener('click', next);
-  prevBtn.addEventListener('click', prev);
+  document.querySelector('.carousel-btn-prev').addEventListener('click', prev);
+  document.querySelector('.carousel-btn-next').addEventListener('click', next);
 
   const prevMobile = document.querySelector('.carousel-btn-prev-mobile');
   const nextMobile = document.querySelector('.carousel-btn-next-mobile');
@@ -162,6 +131,8 @@ function initCarousel() {
     const diff = startX - e.clientX;
     if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
   });
+
+  window.addEventListener('resize', () => jumpTo(current, false));
 
   window.addEventListener('resize', () => update(false));
 
