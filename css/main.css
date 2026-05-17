@@ -522,9 +522,19 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   background: var(--white);
   transform: scale(1.3);
 }
+.carousel-mobile-arrows {
+  display: none;
+}
 @media (max-width: 700px) {
   .testimonial-card { flex: 0 0 100%; }
-  .carousel-dots { display: flex; }
+  .carousel-dots { display: none; }
+  .carousel-btn-prev, .carousel-btn-next { display: none; }
+  .carousel-mobile-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
 }
 
 /* ── Bio ── */

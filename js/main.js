@@ -149,6 +149,11 @@ function initCarousel() {
   nextBtn.addEventListener('click', next);
   prevBtn.addEventListener('click', prev);
 
+  const prevMobile = document.querySelector('.carousel-btn-prev-mobile');
+  const nextMobile = document.querySelector('.carousel-btn-next-mobile');
+  if (prevMobile) prevMobile.addEventListener('click', prev);
+  if (nextMobile) nextMobile.addEventListener('click', next);
+
   // Swipe support
   let startX = 0;
   track.addEventListener('pointerdown', (e) => { startX = e.clientX; track.classList.add('grabbing'); track.setPointerCapture(e.pointerId); });
