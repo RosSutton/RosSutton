@@ -175,10 +175,17 @@ function initCarousel() {
 
 // Tap to flip on touch devices
 function initCardFlip() {
+  if (!window.matchMedia('(hover: none)').matches) return;
+
   document.querySelectorAll('.service-card-wrap').forEach((card) => {
-    card.addEventListener('click', (e) => {
-      if (!window.matchMedia('(hover: none)').matches) return;
+    let touchMoved = false;
+
+    card.addEventListener('touchstart', () => { touchMoved = false; }, { passive: true });
+    card.addEventListener('touchmove', () => { touchMoved = true; }, { passive: true });
+    card.addEventListener('touchend', (e) => {
+      if (touchMoved) return;
       if (e.target.closest('a')) return;
+      e.preventDefault();
       card.classList.toggle('flipped');
     });
   });
