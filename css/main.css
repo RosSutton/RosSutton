@@ -126,6 +126,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   width: 380px;
   height: 480px;
   object-fit: cover;
+  image-orientation: from-image;
   border-radius: 200px 200px 160px 160px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.12);
 }
