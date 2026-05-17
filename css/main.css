@@ -240,6 +240,10 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 }
 
 /* ── Approach ── */
+.approach-bg {
+  background: linear-gradient(315deg, var(--cream) 60%, var(--green-light) 100%);
+  width: 100%;
+}
 #approach {
   background: var(--white);
   border-radius: var(--radius);
@@ -644,13 +648,14 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
-  line-height: 1;
   color: var(--green);
   flex-shrink: 0;
 }
-.contact-chip-icon.mail-icon {
-  padding-bottom: 6px;
+.contact-svg-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  filter: invert(59%) sepia(20%) saturate(500%) hue-rotate(70deg) brightness(85%);
 }
 .contact-chip-icon.linkedin-icon {
   background: var(--orange-light);

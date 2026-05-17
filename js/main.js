@@ -176,10 +176,10 @@ function initCarousel() {
 // Tap to flip on touch devices
 function initCardFlip() {
   document.querySelectorAll('.service-card-wrap').forEach((card) => {
-    card.addEventListener('click', () => {
-      if (window.matchMedia('(hover: none)').matches) {
-        card.classList.toggle('flipped');
-      }
+    card.addEventListener('click', (e) => {
+      if (!window.matchMedia('(hover: none)').matches) return;
+      if (e.target.closest('a')) return;
+      card.classList.toggle('flipped');
     });
   });
 }
