@@ -276,7 +276,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 #services { background: var(--cream); }
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr;
+ grid-template-columns: repeat(3, 1fr);
   gap: 1.75rem;
   margin-top: 3rem;
 }
