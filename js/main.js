@@ -3,10 +3,10 @@ const sections = [
   'sections/hero.html',
   'sections/approach.html',
   'sections/services.html',
+  'sections/blogs.html',
   'sections/testimonials.html',
   'sections/bio.html',
   'sections/contact.html',
-  'sections/blogs.html',
 ];
 
 async function loadSections() {
