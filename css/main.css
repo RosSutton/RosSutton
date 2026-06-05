@@ -110,7 +110,13 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   color: var(--text-mid);
   max-width: 640px;
 }
-
+.quote-text {
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--green-light);
+}
 /* ── Hero ── */
 #hero {
   min-height: 100vh;
