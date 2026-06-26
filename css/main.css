@@ -715,7 +715,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   .hero-subtitle { display: none; }
   .hero-image { display: none; }
   .hero-image-mobile { display: flex; justify-content: center; margin: 1rem 0; }
-  .hero-photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; }
+  .hero-photo { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; }
   .hero-buttons { flex-direction: column; align-items: stretch; }
   .hero-buttons .btn {
     text-align: center;
