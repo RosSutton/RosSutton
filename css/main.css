@@ -702,6 +702,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 }
 
 .hero-image-mobile { display: none; }
+.service-card-mobile { display: none; }
 
 @media (max-width: 600px) {
   .services-grid,
@@ -722,6 +723,12 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
     padding: 0.5rem 1.25rem;
     font-size: 0.8rem;
   }
+  .service-card-wrap { display: none; }
+.service-card-mobile { display: block; background: var(--white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); border-top: 4px solid var(--green); }
+.service-card-mobile:nth-child(2) { border-top-color: var(--orange); }
+.service-card-mobile:nth-child(3) { border-top-color: var(--brown-light); }
+.service-card-mobile p { font-size: 0.9rem; color: var(--text-mid); margin: 1rem 0; }
+.service-card-actions-mobile { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
   .hero-associates { order: 3; }
   .hide-mobile { display: none; }
 }
