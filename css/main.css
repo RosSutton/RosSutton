@@ -566,8 +566,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   font-size: 0.85rem;
   color: var(--green);
   font-weight: 500;
-  border: 6px solid var(--white);
-  box-shadow: 0 0 0 3px var(--green-light);
   text-align: center;
   padding: 1rem;
 }
