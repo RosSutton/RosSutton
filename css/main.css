@@ -53,7 +53,7 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 .nav-logo {
-  font-family: var(--font-heading);
+
   font-size: 1.25rem;
   color: var(--brown);
   letter-spacing: 0.02em;
@@ -99,7 +99,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   margin-bottom: 0.75rem;
 }
 .section-title {
-  font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--text-dark);
   line-height: 1.2;
@@ -331,7 +330,6 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 .service-card-wrap:nth-child(3) .service-card-back { background: var(--brown); }
 
 .service-card-title {
-  font-family: var(--font-heading);
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
   color: var(--text-dark);
@@ -614,7 +612,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   margin-bottom: 0.5rem;
 }
 .blog-body h3 {
-  font-family: var(--font-heading);
+
   font-size: 1.1rem;
   margin-bottom: 0.75rem;
   color: var(--text-dark);
