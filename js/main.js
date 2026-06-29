@@ -171,7 +171,9 @@ hamburger.addEventListener('click', () => {
 // Close menu when a link is clicked
 document.querySelectorAll('.nav-mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
+    setTimeout(() => {
+      mobileMenu.classList.remove('open');
+    }, 300);
   });
 });
 loadSections();
