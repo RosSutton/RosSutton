@@ -160,5 +160,18 @@ function initCardFlip() {
 // Footer year
 const footerYear = document.getElementById('footer-year');
 if (footerYear) footerYear.textContent = new Date().getFullYear();
+// Hamburger menu
+const hamburger = document.querySelector('.nav-hamburger');
+const mobileMenu = document.querySelector('.nav-mobile-menu');
 
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+});
 loadSections();
