@@ -771,4 +771,5 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   .hero-associates { order: 3; }
   .hide-mobile { display: none; }
   .nav-hamburger { display: flex; }
+  html { scroll-behavior: auto; }
 }
