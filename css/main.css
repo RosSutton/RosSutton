@@ -108,6 +108,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   font-size: 1.05rem;
   color: var(--text-mid);
   max-width: 640px;
+  margin-bottom: 1em; /* adjust to taste - try 0.75em to 1.5em */
 }
 .quote-text {
   color: var(--text-light);
