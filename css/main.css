@@ -574,7 +574,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 #blogs { background: var(--cream); }
 .blogs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.75rem;
   margin-top: 3rem;
 }
