@@ -1,0 +1,17 @@
+<svg width="190" height="189" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 189" overflow="hidden">
+  <!-- Left figure -->
+  <circle cx="40" cy="55" r="17" fill="#7E93A8"/>
+  <path d="M40 76C21 76 12 91 12 108L12 130 40 130 40 108C40 96 44 86 51 79 48 77 44 76 40 76Z" fill="#7E93A8"/>
+
+  <!-- Right figure -->
+  <circle cx="150" cy="55" r="17" fill="#7E93A8"/>
+  <path d="M150 76C169 76 178 91 178 108L178 130 150 130 150 108C150 96 146 86 139 79 142 77 146 76 150 76Z" fill="#7E93A8"/>
+
+  <!-- Center figure (larger, forward) -->
+  <circle cx="95" cy="46" r="20" fill="#7E93A8"/>
+  <path d="M95 70C71 70 60 88 60 108L60 145 130 145 130 108C130 88 119 70 95 70Z" fill="#7E93A8"/>
+
+  <!-- Linking arms / hands -->
+  <path d="M40 108C48 118 55 122 66 120L64 132C50 135 41 129 32 118Z" fill="#7E93A8"/>
+  <path d="M150 108C142 118 135 122 124 120L126 132C140 135 149 129 158 118Z" fill="#7E93A8"/>
+</svg>
