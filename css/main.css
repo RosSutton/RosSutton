@@ -383,6 +383,9 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 .service-card-wrap:nth-child(4) .tag { background: var(--blue-light); }
 .service-card-wrap:nth-child(4) .btn-back-primary { color: var(--blue); }
 
+.blog-card:nth-child(4) .blog-thumb img {
+  object-position: top;
+}
 /* Flip hint */
 .flip-hint {
   position: absolute;
