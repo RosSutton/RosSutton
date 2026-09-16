@@ -138,24 +138,16 @@ function initCarousel() {
 
   update(false);
 }
-
 // Tap to flip on touch devices
 function initCardFlip() {
-  if (!window.matchMedia('(hover: none)').matches) return;
-
   document.querySelectorAll('.service-card-wrap').forEach((card) => {
-    let touchMoved = false;
-
-    card.addEventListener('touchstart', () => { touchMoved = false; }, { passive: true });
-    card.addEventListener('touchmove', () => { touchMoved = true; }, { passive: true });
-    card.addEventListener('touchend', (e) => {
-      if (touchMoved) return;
+    card.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
-      e.preventDefault();
       card.classList.toggle('flipped');
     });
   });
 }
+
 
 // Footer year
 const footerYear = document.getElementById('footer-year');
