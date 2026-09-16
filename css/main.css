@@ -292,7 +292,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 /* Flip card structure */
 .service-card-wrap {
   perspective: 1000px;
-  height: 300px;
+  height: 480px;
 }
 .service-card-inner {
   position: relative;
