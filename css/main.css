@@ -768,8 +768,8 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
     padding: 0.5rem 1.25rem;
     font-size: 0.8rem;
   }
-  .service-card-wrap { display: none; }
-.service-card-mobile { display: block; background: var(--white); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); border-top: 4px solid var(--green); }
+ .service-card-wrap { display: block; }
+.service-card-mobile { display: none; }
 .service-card-mobile:nth-child(2) { border-top-color: var(--orange); }
 .service-card-mobile:nth-child(3) { border-top-color: var(--brown-light); }
   .service-card-mobile:nth-child(4) { border-top-color: var(--blue); }
