@@ -352,8 +352,8 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   margin-bottom: 1rem;
 }
 .service-icon img {
-  width: 80px;
-  height: 80px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   display: block;
 }
