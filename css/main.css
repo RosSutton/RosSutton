@@ -334,7 +334,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 
 .service-card-title {
   font-size: 1.2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
   color: var(--text-dark);
 }
 .service-card-back .service-card-title { color: var(--white); }
@@ -348,8 +348,8 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 .service-icon {
   display: flex;
   justify-content: center;
-  margin-top: 0.75rem;
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .service-icon img {
   width: 36px;
