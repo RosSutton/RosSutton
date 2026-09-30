@@ -370,7 +370,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: auto;
-  padding-bottom: 2.25rem;
+  padding-bottom: 1.25rem;
 }
 .tag {
   font-size: 0.72rem;
