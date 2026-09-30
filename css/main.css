@@ -288,11 +288,17 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   gap: 1.75rem;
   margin-top: 3rem;
 }
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
 
 /* Flip card structure */
 .service-card-wrap {
   perspective: 1000px;
-  height: 480px;
+  height: 260px;
 }
 .service-card-inner {
   position: relative;
