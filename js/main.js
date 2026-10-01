@@ -140,9 +140,17 @@ function initCarousel() {
 }
 // Tap to flip on touch devices
 function initCardFlip() {
-  document.querySelectorAll('.service-card-wrap').forEach((card) => {
-    card.addEventListener('click', (e) => {
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return; // laptop/desktop: hover handles it, skip tap logic
+
+  document.querySelectorAll('.service-card-wrap').forEach(card => {
+    let touchMoved = false;
+
+    card.addEventListener('touchstart', () => { touchMoved = false; }, { passive: true });
+    card.addEventListener('touchmove', () => { touchMoved = true; }, { passive: true });
+    card.addEventListener('touchend', (e) => {
+      if (touchMoved) return;         // ignore if it was a scroll, not a tap
       if (e.target.closest('a')) return;
+      e.preventDefault();
       card.classList.toggle('flipped');
     });
   });
