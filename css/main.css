@@ -307,9 +307,14 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
-.service-card-wrap:hover .service-card-inner,
 .service-card-wrap.flipped .service-card-inner {
   transform: rotateY(180deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card-wrap:hover .service-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 .service-card-front,
 .service-card-back {
