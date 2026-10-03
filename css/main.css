@@ -563,7 +563,7 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
 }
 @media (max-width: 600px) {
   .service-card-wrap {
-    height: 440px;
+    height: 360px;
   }
 }
 /* ── Bio ── */
