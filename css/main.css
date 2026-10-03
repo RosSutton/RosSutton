@@ -561,7 +561,11 @@ section:first-of-type { padding-top: calc(var(--nav-h) + 4rem); }
     margin-top: 1.25rem;
   }
 }
-
+@media (max-width: 600px) {
+  .service-card-wrap {
+    height: 440px;
+  }
+}
 /* ── Bio ── */
 #bio { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
 .bio-grid {
